@@ -1,0 +1,2 @@
+set -x 
+sudo tcpdump -i en1 -n 'port 12345' 

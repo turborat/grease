@@ -1,0 +1,25 @@
+filter annotations
+
+obj
+	split obj into ro/rw
+	add dat to obj
+	create log obj
+
+xfer
+
+timer
+	gx-timer skew / correction
+	allow multiple timers in one process
+
+udp/jni
+	specify interface (eg: lo)
+	raw packet header
+
+think through life-cycle completely
+
+allow args to be retrieved multiple times
+
+def.txt
+	allow full package names to be specified
+	allow multiple def files
+
