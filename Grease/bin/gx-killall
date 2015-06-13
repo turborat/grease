@@ -1,0 +1,2 @@
+jps -l|grep -E 'GXGO|Seq'|cut -d ' ' -f 1|xargs kill
+

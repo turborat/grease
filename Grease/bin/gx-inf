@@ -1,0 +1,32 @@
+set -e 
+
+gx-killall
+
+function spawn { 
+  $1 & 
+  pids="$! $pids"
+  sleep .2 
+}
+
+spawn gx-seq
+spawn gx-hist
+spawn gx-timer
+spawn gx-snoop
+
+function clean_up {
+  echo 
+  for pid in $pids
+  do
+    kill $pid
+    sleep .2
+  done
+}
+
+trap clean_up SIGINT 
+
+echo greasing..
+
+wait $pids
+
+echo tchuss.
+

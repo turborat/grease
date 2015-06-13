@@ -1,0 +1,34 @@
+out=`echo ../out/*/* | tr ' ' "\n" | grep -E 'production|test'`
+
+if [[ $# -eq 0 ]]
+then 
+  echo "missing args (class+args)" >&2
+  exit -1
+fi
+
+for d in $out
+do
+  cd $d
+  clz=`find . -name "$1.class" | sed s/.class// | sed 's|\./||' | sed 's/\//./' `
+  cd - >/dev/null
+  if [[ "$clz" != "" ]]
+  then 
+    break
+  fi
+done
+
+if [[ "$clz" == "" ]]
+then 
+  echo "no class found" >&2
+  exit -1 
+fi 
+
+libs=`echo $out lib/* | tr " " :`
+
+java=/Library/Java/JavaVirtualMachines/1.7.0u.jdk/Contents/Home/bin/java
+$java -version 2>&1 | grep version
+
+echo $clz
+
+shift
+$java -cp $libs $clz $@

@@ -1,0 +1,2 @@
+gx-java -version 2>&1 | grep version
+exec gx-java gx.inf.Seq $@
