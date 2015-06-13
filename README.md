@@ -1,6 +1,6 @@
-grease allows one to easily create fast reliable distributed systems
+grease allows one to easily create fast, reliable distributed systems
 
-grease supports concurrency through small, single purpose processes that communicate over udp/multicast
+grease promotes concurrency through small, single purpose processes that communicate over udp/multicast
 
 grease is a deterministic, recoverable, replayable, high-level event model
 
