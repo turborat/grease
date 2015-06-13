@@ -4,7 +4,7 @@ grease supports concurrency through small, single purpose processes that communi
 
 grease is a deterministic, recoverable, replayable, high-level event model
 
-grease is fast because it strives because it is minimal
+grease achieves speed through minimalism
 
 grease is light-weight, lazy and garbage free in it's steady state
 
